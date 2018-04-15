@@ -1,2 +1,6 @@
-<%= image_tag @post.image.url(:medium) %>
-<%= @post.caption %>
+<div class="card" style="width: 18rem;">
+  <%= image_tag(@post.image.url(:medium), class: "card-img-top") %>
+  <div class="card-body">
+    <p class="card-text"><%= @post.caption %></p>
+  </div>
+</div>

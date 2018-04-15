@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Index page displays a list of posts' do
   scenario 'the index displays correct created post information' do
-    post_1 = create(:post, caption: "Post 1")
-    post_2 = create(:post, caption: "Post 2")
+    create(:post, caption: "Post 1")
+    create(:post, caption: "Post 2")
 
     visit '/'
     expect(page).to have_content("Post 1")
