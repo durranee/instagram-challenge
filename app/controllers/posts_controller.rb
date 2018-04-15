@@ -9,13 +9,19 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to @post
+    if @post.save
+      flash[:success] = "Success!"
+      redirect_to @post
+    else
+      flash[:alert] = "Error! Please select a picture"
+      render :new
+    end
   end
 
   def show
     @post = Post.find(params[:id])
   end
-  
+
   private
 
   def post_params
